@@ -5,6 +5,9 @@ The kinesis2sse package subscribes to a Kinesis Stream using
 [vmware-go-kcl-v2][kcl], loads events into [memlog][memlog], and then exposes
 them as [server-sent events (SSE)][sse] to clients.
 
+> [!TIP]
+> Check out [my blog post][blog-post] on this project for more information.
+
 Usage
 -----
 
@@ -13,7 +16,7 @@ us-east-2:
 
 ```sh
 go build
-./sse \
+./kinesis2sse \
   --routes '[{"path":"/","stream":"test-server-events"}]' \
   --region us-east-2
 ```
@@ -53,4 +56,5 @@ similar use cases. For example,
 [kcl]: https://github.com/vmware/vmware-go-kcl-v2
 [memlog]: https://github.com/embano1/memlog
 [sse]: https://en.wikipedia.org/wiki/Server-sent_events
+[blog-post]: https://mrkrbrts.com/blog/kinesis-to-sse
 [wikimedia]: https://wikitech.wikimedia.org/wiki/Event_Platform/EventStreams
