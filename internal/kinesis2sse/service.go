@@ -242,6 +242,7 @@ func (s *Service) handleFunc(ml *memlog.Log, t2o *Timestamp2Offset, w http.Respo
 	}
 
 	// 3. Start sending SSEs.
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.Header().Set("Content-Type", "text/event-stream")
 
 	if _, err := fmt.Fprint(w, ":ok\n\n"); err != nil {
